@@ -1,0 +1,271 @@
+html{
+  overflow-x: hidden;
+}
+body{
+  width:100%;
+  height:100%;
+  overflow-x: hidden;
+}
+/*/////////INSTRUCTIONS; MATCH EACH CSS SECTION TO ITS CORRESPONDING JS COMPONENT WITH THE SAME NAME////*/
+/*////////////////////////////////////////Header//////////////////////////////////////////////////////////*/
+
+/*////////////////////////////////////////MidSection//////////////////////////////////////////////////////////*/
+
+.mid-section{
+  background:url('../color-pencils.jpg');
+  width:100%;
+  height:450px;
+  position:relative;
+  background-position:left;
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-attachment:fixed;
+}
+.mid-section .img-text{
+  height:40%;
+  max-width:85%;
+  text-align: center;
+
+
+}
+@keyframes fade {
+  from{color:black;}
+}
+.img-text #line1{
+  opacity:.7;
+  color:white;
+  font-weight:600;
+  font-size:20px;
+  letter-spacing: 10px;
+  animation-name: fade;
+  animation-duration:3s
+}
+.img-text #line2{
+  font-weight:600;
+  font-size:50px;
+  color:white;
+  animation-name: fade;
+  animation-duration:3s
+}
+.header-img-extras{
+  margin-top: 15%;
+  text-transform: uppercase;
+}
+.header-img-extras .one{
+  color:grey;
+}
+.header-img-extras .two{
+  color:white;
+  font-size: 25px;
+}
+.header-img-extras .three{
+  color:white;
+  opacity:.7;
+}
+/*////////////////////////////////////////Bottom//////////////////////////////////////////////////////////*/
+
+.content2-page{
+  width:100%;
+  height:60%;
+}
+
+.costs, .sales{
+  text-align: center;
+  font-size: 40px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.costs-container{
+  width: 70%;
+margin: auto;
+}
+.sales-container{
+  width: 70%;
+margin: auto;
+}
+/*//////////////////////////////////////Footer///////////////////////////////////*/
+.footer{
+  background:linear-gradient(to right, #e35d5b, #e53935);
+  width:100%;
+  height:250px;
+  position:relative;
+}
+.email-section {
+  width:100%;
+  height:200px;
+  text-align: center;
+  padding-top: 4%;
+  display:block;
+}
+.email-section .logo{
+  display: block;
+  margin-bottom: 10px;
+  font-family: sans-serif;
+  font-weight: 600;
+  font-size: 30px;
+  color:white;
+}
+.email-section ul{
+  margin:20px 0px;
+  display: inline-block;
+}
+.email-section li{
+  display: inline-block;
+}
+
+.footer-menu li #line{
+border-right: 1px solid white;
+}
+.email-section ul li a{
+  padding:0px 30px;
+  font-weight: 600;
+  color:white;
+  text-decoration: none;
+  font-family: sans-serif;
+}
+.email-section .footer-icons{
+  margin-top: 20px;
+}
+.email-section .footer-icons ul li a{
+  padding: 0px;
+  margin:10px;
+}
+.footer-copyright{
+  color:white;
+  margin-top: 7px;
+}
+/*//////////////////////////////////////Responsive///////////////////////////////////*/
+@media screen and (max-width:768px){
+  header{
+    display:none;
+  }
+  .content2{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(19rem,1fr)) ;
+  grid-auto-rows: minmax(300px,50%);
+  background:white;
+  }
+}
+
+
+/* RESPONSIVE HAMBURGER MENU*/
+@media screen and (max-width:768px){
+
+  .menu-btn{
+    position:fixed;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:60px;
+    height:60px;
+    cursor:pointer;
+    transition: all .5s ease-in-out;
+background: rgba(0, 0, 0, 0.7);
+border-radius: 50px;
+padding:10px;
+    top:5px;
+    right:10px;
+      z-index: 2;
+  }
+  .menu-btn-bgr{
+    width:30px;
+    height:4px;
+    background: white;
+    border-radius:5px;
+    box-shadow:0 2px 5px rgba(255,101,47,.2);
+    transition: all .5s ease-in-out;
+  }
+  .menu-btn-bgr::before,
+  .menu-btn-bgr::after{
+  content:'';
+  position:absolute;
+  width:30px;
+  height:4px;
+  background: white;
+  border-radius:5px;
+  box-shadow:0 2px 5px rgba(255,101,47,.2);
+  transition: all .5s ease-in-out;
+  }
+  .menu-btn-bgr::before{
+    transform:translateY(-16px);
+  }
+  .menu-btn-bgr::after{
+    transform:translateY(16px);
+  }
+
+
+  .menu-btn.open .menu-btn-bgr{
+    transform:translateX(-50px);
+    background:transparent;
+    box-shadow:none;
+  }
+  .menu-btn.open .menu-btn-bgr::before{
+    transform:rotate(45deg) translate(35px,-35px);
+  }
+  .menu-btn.open .menu-btn-bgr::after{
+    transform:rotate(-45deg) translate(35px,35px) ;
+  }
+.nav-links{
+  width: 100%;
+background-color:#131A22;
+  position:fixed;
+transform: translateX(-100%);
+  height:100vh;
+  z-index: 1;
+  transition:.3s ease-in-out;
+}
+.nav-links ul{
+opacity: 1;
+  margin-top: 100px;
+  display:block;
+  z-index:1;
+  font-size: 25px;
+  font-family: sans-serif;
+  text-align:center;
+  font-weight: 600;
+    transition:.3s ease-in-out;
+}
+.nav-links li{
+  width:100%;
+  height:50px;
+  padding:40px 0px;
+  display:block;
+  z-index:1;
+    transition:.3s ease-in-out;
+    border-bottom: 1px solid white;
+}
+.nav-links li a{
+  color:white;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.nav-links li:hover{
+  transform: scale(1.2);
+}
+.clicked{
+transform: translateX(0%);
+}
+}
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 450px) {
+
+  .content2-img{
+    margin-top:60px;
+  background: url('images/bar.jpg');
+  width:100%;
+  height:60%;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  align-self: center;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  }
+}
